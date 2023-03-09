@@ -1,4 +1,5 @@
 import 'package:d_locker/Modals/google_signin.dart';
+import 'package:d_locker/Screens/zDrawer.dart';
 import 'package:d_locker/Screens/onBoarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class _SignUp_pageState extends State<SignUp_page> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return Center(child: Container(child: Text('hehehhehehe'),));
+            return ZDrawer();
           } else if (snapshot.hasError) {
             return Center(
               child: Text("Something Went Wrong!"),
