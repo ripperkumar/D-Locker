@@ -7,7 +7,7 @@ class GoogleSignInProvider extends ChangeNotifier {
   final googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _user;
   GoogleSignInAccount get user => _user!;
-  Future googleLogin() async {
+  Future googleLogin(context) async {
     final googleUser = await googleSignIn.signIn();
     if (googleUser == null) return;
     _user = googleUser;
@@ -16,9 +16,25 @@ class GoogleSignInProvider extends ChangeNotifier {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    await FirebaseAuth.instance.signInWithCredential(credential);
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(),
+              Text('Signning In',style: TextStyle(color: Colors.white),)
+            ],
+          ),
+        );
+      },
+    );
 
+    await FirebaseAuth.instance.signInWithCredential(credential);
+    Navigator.of(context).pop();
     notifyListeners();
+
   }
 
   Future logout(context) async {
@@ -26,7 +42,13 @@ class GoogleSignInProvider extends ChangeNotifier {
       context: context,
       builder: (context) {
         return Center(
-          child: CircularProgressIndicator(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(),
+              Text('Logging Out',style: TextStyle(color: Colors.white),)
+            ],
+          ),
         );
       },
     );

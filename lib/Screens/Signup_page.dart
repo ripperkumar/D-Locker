@@ -106,7 +106,7 @@ class SignUpWidget extends StatelessWidget {
                             final provider = Provider.of<GoogleSignInProvider>(
                                 context,
                                 listen: false);
-                            provider.googleLogin();
+                            provider.googleLogin(context);
                           },
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<
