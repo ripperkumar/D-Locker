@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: SignUp_page.idScreen,
+        initialRoute: OnBoard.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           OnBoard.idScreen: (context) => OnBoard(),

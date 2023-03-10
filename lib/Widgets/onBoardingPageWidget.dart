@@ -48,7 +48,8 @@ class OnBoardingPageWidget extends StatelessWidget {
             child:SingIn_widget?
                Container(child: ElevatedButton(
                  onPressed: (){
-                   Navigator.pushNamed(context, SignUp_page.idScreen);
+                   Navigator.pushNamedAndRemoveUntil(
+                       context, SignUp_page.idScreen, (route) => false);
                  },
                  child: Text('SIgn-Up ->'),
                ),)
