@@ -24,14 +24,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => GoogleSignInProvider(),
         ),
-        // ChangeNotifierProvider(create: (context)=>userReport(),),
       ],
       child: MaterialApp(
         title: 'BookHero',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: OnBoard.idScreen,
+        initialRoute: SignUp_page.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           OnBoard.idScreen: (context) => OnBoard(),

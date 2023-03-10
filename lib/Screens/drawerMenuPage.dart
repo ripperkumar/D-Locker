@@ -1,6 +1,10 @@
 import 'package:d_locker/Modals/drawer_item_modal.dart';
+import 'package:d_locker/Modals/google_signin.dart';
+import 'package:d_locker/Screens/Signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MenuItem{
   static  final payment=  DrawerMenuItem(title: 'Payment',icon: Icons.payment);
@@ -9,6 +13,7 @@ class MenuItem{
   static  final help=  DrawerMenuItem(title: 'help',icon: Icons.help);
   static  final aboutUs=  DrawerMenuItem(title: 'aboutUs',icon: Icons.question_mark_rounded);
   static  final rateUs=  DrawerMenuItem(title: 'rateUs',icon: Icons.rate_review);
+  static  final logout=  DrawerMenuItem(title: 'Log Out',icon: FontAwesomeIcons.signOut);
   static final all =<DrawerMenuItem>[payment,promo,notification,help,aboutUs,rateUs];
 }
 
@@ -25,7 +30,7 @@ final ValueChanged<DrawerMenuItem> onSelectedItem;
     return Theme(
       data: ThemeData.dark(),
       child: Scaffold(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.deepPurpleAccent,
         body:SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +65,22 @@ final ValueChanged<DrawerMenuItem> onSelectedItem;
 
               ...MenuItem.all.map(buildMenuItem).toList(),
               Spacer(flex: 2,),
-
+                ListTileTheme(
+                  selectedColor: Colors.white,
+                  child: ListTile(
+                    selectedTileColor: Colors.black26,
+                    minLeadingWidth: 20,
+                    leading: Icon(MenuItem.logout.icon),
+                    title: Text(MenuItem.logout.title),
+                    onTap: (){
+                      final provider =
+                      Provider.of<GoogleSignInProvider>(context, listen: false);
+                      provider.logout(context).then((value) =>
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, SignUp_page.idScreen, (route) => false));
+                    },
+                  ),
+                ),
             ],
           ),
         ),

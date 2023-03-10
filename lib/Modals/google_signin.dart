@@ -21,9 +21,20 @@ class GoogleSignInProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future logout() async {
+  Future logout(context) async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+    _user = null;
     await googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
+    notifyListeners();
+    Navigator.of(context).pop();
   }
 
   Future<void> deleteAccount(context) async {

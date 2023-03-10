@@ -23,7 +23,7 @@ class _ZDrawerState extends State<ZDrawer> {
       angle: -10,
       slideWidth: MediaQuery.of(context).size.width*0.6,
       showShadow: true,
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Colors.white60,
       mainScreen: getScreen(),
       menuScreen: Builder(
         builder: (context) {
