@@ -12,9 +12,9 @@ class MenuItem{
   static  final notification=  DrawerMenuItem(title: 'notification',icon: Icons.doorbell_outlined);
   static  final help=  DrawerMenuItem(title: 'help',icon: Icons.help);
   static  final aboutUs=  DrawerMenuItem(title: 'aboutUs',icon: Icons.question_mark_rounded);
-  static  final rateUs=  DrawerMenuItem(title: 'rateUs',icon: Icons.rate_review);
+  static  final addCardDetail=  DrawerMenuItem(title: 'Add Card Detail',icon: Icons.rate_review);
   static  final logout=  DrawerMenuItem(title: 'Log Out',icon: FontAwesomeIcons.signOut);
-  static final all =<DrawerMenuItem>[payment,promo,notification,help,aboutUs,rateUs];
+  static final all =<DrawerMenuItem>[payment,promo,notification,help,aboutUs,addCardDetail];
 }
 
 

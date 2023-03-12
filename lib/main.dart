@@ -1,3 +1,4 @@
+import 'package:d_locker/Screens/addCard_screen.dart';
 import 'package:d_locker/Screens/onBoard.dart';
 import 'package:d_locker/Screens/onBoarding_screen.dart';
 
@@ -30,10 +31,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: OnBoard.idScreen,
+        initialRoute: SignUp_page.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           OnBoard.idScreen: (context) => OnBoard(),
+          AddCardDetails.idScreen: (context) => AddCardDetails(),
         },
         debugShowCheckedModeBanner: false,
       ),

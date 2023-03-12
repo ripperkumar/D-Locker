@@ -1,5 +1,6 @@
 import 'package:d_locker/Modals/drawer_item_modal.dart';
 import 'package:d_locker/Screens/Signup_page.dart';
+import 'package:d_locker/Screens/addCard_screen.dart';
 import 'package:d_locker/Screens/drawerMenuPage.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class _ZDrawerState extends State<ZDrawer> {
    return MenuCard();
       }
     else{
-      return SignUpWidget();
+      return AddCardDetails();
     }
   }
 
