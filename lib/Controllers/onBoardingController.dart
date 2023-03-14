@@ -18,7 +18,7 @@ class OnBoardingController extends GetxController{
         subTitle: 'Never worry about losing important documents again with our data vault feature',
         bgColor: Colors.blue,
       ),
-      SingIn_widget: false,
+      SingIn_widget: true,
     ),
     OnBoardingPageWidget(
       model: OnBoardingModel(
@@ -27,7 +27,7 @@ class OnBoardingController extends GetxController{
         subTitle: 'Transfer your digital legacy to your loved ones seamlessly with our data legacy transfer feature.',
         bgColor: Colors.yellow,
       ),
-      SingIn_widget: false,
+      SingIn_widget: true,
     ),
     OnBoardingPageWidget(
       model: OnBoardingModel(

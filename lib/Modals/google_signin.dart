@@ -32,27 +32,30 @@ class GoogleSignInProvider extends ChangeNotifier {
     );
 
     await FirebaseAuth.instance.signInWithCredential(credential);
-    Navigator.of(context).pop();
-    notifyListeners();
 
+    notifyListeners();
+    Navigator.of(context).pop();
   }
 
   Future logout(context) async {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(),
-              Text('Logging Out',style: TextStyle(color: Colors.white),)
-            ],
+        return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 8,),
+                Text('Logging Out',style: TextStyle(color: Colors.white,fontSize: 14),)
+              ],
+            ),
           ),
         );
       },
     );
-    _user = null;
     await googleSignIn.disconnect();
     FirebaseAuth.instance.signOut();
     notifyListeners();

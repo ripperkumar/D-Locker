@@ -1,6 +1,7 @@
 import 'package:d_locker/Screens/addCard_screen.dart';
+import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/onBoard.dart';
-import 'package:d_locker/Screens/onBoarding_screen.dart';
+import 'package:d_locker/Screens/zDrawer.dart';
 
 import 'Screens/Signup_page.dart';
 import 'Modals/google_signin.dart';
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
           SignUp_page.idScreen: (context) => SignUp_page(),
           OnBoard.idScreen: (context) => OnBoard(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),
+          MenuCard.idScreen: (context) => MenuCard(),
+          ZDrawer.idScreen: (context) => ZDrawer(),
         },
         debugShowCheckedModeBanner: false,
       ),

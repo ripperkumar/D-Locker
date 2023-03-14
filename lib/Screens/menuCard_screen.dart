@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MenuCard extends StatefulWidget {
   const MenuCard({Key? key}) : super(key: key);
-
+  static const String idScreen = "MenuCard screen";
   @override
   State<MenuCard> createState() => _MenuCardState();
 }

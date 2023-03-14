@@ -10,6 +10,6 @@ class MenuWidget extends StatelessWidget {
         onPressed: () {
           ZoomDrawer.of(context)!.toggle();
         },
-        icon: FaIcon(FontAwesomeIcons.alignLeft,size: 20,color: isBlack?Colors.black:Colors.white,));
+        icon: FaIcon(FontAwesomeIcons.alignLeft,size: 22,color: isBlack?Colors.black:Colors.white,));
   }
 }

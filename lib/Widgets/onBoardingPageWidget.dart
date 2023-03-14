@@ -1,5 +1,7 @@
 import 'package:d_locker/Screens/Signup_page.dart';
 import 'package:d_locker/Modals/onBoardingModel.dart';
+import 'package:d_locker/Screens/menuCard_screen.dart';
+import 'package:d_locker/Screens/zDrawer.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPageWidget extends StatelessWidget {
@@ -48,10 +50,9 @@ class OnBoardingPageWidget extends StatelessWidget {
             child:SingIn_widget?
                Container(child: ElevatedButton(
                  onPressed: (){
-                   Navigator.pushNamedAndRemoveUntil(
-                       context, SignUp_page.idScreen, (route) => false);
+                  Navigator.pushNamed(context, ZDrawer.idScreen);
                  },
-                 child: Text('SIgn-Up ->'),
+                 child: Text("Let'\s go"),
                ),)
                 :Container() ,
           ),

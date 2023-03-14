@@ -8,7 +8,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class ZDrawer extends StatefulWidget {
   const ZDrawer({Key? key}) : super(key: key);
-
+  static const String idScreen = "ZDrawer screen";
   @override
   State<ZDrawer> createState() => _ZDrawerState();
 }
