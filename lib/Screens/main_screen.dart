@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
 import 'package:flutter/material.dart';
@@ -32,82 +34,95 @@ class _MainScreenCardState extends State<MainScreenCard> {
       backgroundColor: Colors.deepPurple,
       body: Stack(
         children: [
+          Positioned(
+            top: 250,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            child: Image.asset(
+              'assets/bg_img2.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              height: 250,
+              height: 280,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(40)),
+                  image: DecorationImage(
+                    image: AssetImage('assets/bg-image-top.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(25)),
               child: Stack(
                 children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      height: 150,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(50),
-                              bottomRight: Radius.circular(0))),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 23,
-                          ),
-                          Text(
-                            'D-LOCKER',
-                            style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                  const Positioned(
+                    top: 70.0,
+                    right: 150.0,
+                    child: Text(
+                      'D-LOCKER',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 45,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   Align(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.topCenter,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(height: 40,),
+                        SizedBox(
+                          height: 1,
+                        ),
                         Text(
                           'Keep Your Data Safe and Secure',
-                          style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           'Never worry about losing important',
                           maxLines: 4,
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
                         ),
                         Text(
                           'documents again with our data vault feature',
                           maxLines: 4,
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                       ],
                     ),
                   ),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
-                      height: 110,
+                      height: 150,
                       width: 110,
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(50),
-                              bottomRight: Radius.circular(0))),
                       child: Align(
                         alignment: Alignment.center,
                         child: CircleAvatar(
-                          radius: 35,
+                          radius: 40,
                           backgroundImage: NetworkImage(currentUser!.photoURL!),
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -116,30 +131,45 @@ class _MainScreenCardState extends State<MainScreenCard> {
             bottom: 40,
             left: 10,
             child: Container(
-              height: 330,
-              width: 330,
+              height: 360,
+              width: 360,
               child: Card(
+                color: Color.fromARGB(0, 255, 255, 255),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                child: Image.asset(
-                  'assets/on-boarding-image-3.jpg',
+                child: Container(
+                  child: Image.asset(
+                    'assets/image_.png',
+                  ),
+                  height: 322,
+                  width: 325,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromARGB(255, 97, 24, 255),
+                        Color.fromARGB(0, 255, 255, 255),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           Positioned(
-            height: 150,
-            width: 150,
-            bottom: 280,
+            height: 110,
+            width: 110,
+            bottom: 320,
             left: 30,
             child: Material(
-              color: Colors.transparent,
-              elevation: 5,
-              borderRadius: BorderRadius.circular(20),
+              color: Color.fromRGBO(0, 0, 0, 0),
+              borderRadius: BorderRadius.circular(15),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Colors.yellow[900],
+                color: Color.fromARGB(255, 0, 0, 0),
                 child: Icon(
                   Icons.file_copy_sharp,
                   color: Colors.white,
@@ -157,13 +187,18 @@ class _MainScreenCardState extends State<MainScreenCard> {
               color: Colors.transparent,
               child: ElevatedButton(
                 style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 98, 24, 255)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
+                          borderRadius: BorderRadius.circular(15))),
                 ),
                 child: Text(
-                  "   lets go    ",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  "   Let's Go    ",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, ZDrawer.idScreen);
@@ -172,32 +207,26 @@ class _MainScreenCardState extends State<MainScreenCard> {
             ),
           ),
           Positioned(
-            bottom: 28,
-            right: 7,
-            child: Container(
-              width: 138,
-              height: 71,
-              decoration: BoxDecoration(
-                  color: Colors.deepPurple,
-                  borderRadius: BorderRadius.circular(20)),
-            ),
-          ),
-          Positioned(
             height: 50,
             bottom: 46,
-            right: 5,
+            right: 15,
             child: Material(
               elevation: 15,
               color: Colors.transparent,
               child: ElevatedButton(
                 style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 98, 24, 255)),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
+                          borderRadius: BorderRadius.circular(15))),
                 ),
                 child: Text(
                   "    Next ->    ",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
                 ),
                 onPressed: () {},
               ),
