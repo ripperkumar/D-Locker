@@ -1,4 +1,5 @@
 import 'package:d_locker/Screens/addCard_screen.dart';
+import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/onBoard.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
@@ -28,17 +29,18 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'BookHero',
+        title: 'D-Locker',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: SignUp_page.idScreen,
+        initialRoute: MainScreenCard.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           OnBoard.idScreen: (context) => OnBoard(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),
           MenuCard.idScreen: (context) => MenuCard(),
           ZDrawer.idScreen: (context) => ZDrawer(),
+          MainScreenCard.idScreen: (context) => MainScreenCard(),
         },
         debugShowCheckedModeBanner: false,
       ),

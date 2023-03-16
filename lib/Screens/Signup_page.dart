@@ -1,4 +1,5 @@
 import 'package:d_locker/Modals/google_signin.dart';
+import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/onBoard.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
@@ -30,7 +31,7 @@ class _SignUp_pageState extends State<SignUp_page> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return OnBoard();
+            return MainScreenCard();
           } else if (snapshot.hasError) {
             return Center(
               child: Text("Something Went Wrong!"),
