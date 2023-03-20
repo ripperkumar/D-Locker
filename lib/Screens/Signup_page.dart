@@ -48,7 +48,7 @@ class SignUpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:HexColor("#071330"),
       body: Stack(
         children: [
           Positioned(
@@ -91,33 +91,33 @@ class SignUpWidget extends StatelessWidget {
                     textStyle:  TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green),
+                        color: Colors.white),
                 ),),
               ],
             ),
           ),
           Positioned(
             top: 472,
-            right: 70,
+            right: 61,
             child: Text(
               'All in One app for Your',
               maxLines: 2,
               textAlign: TextAlign.center,
               style:  GoogleFonts.poppins(textStyle:TextStyle(
-                  fontSize: 20,
+                  fontSize: 21,
                   fontWeight: FontWeight.bold,
                   color: Colors.red),
             ),),
           ),
           Positioned(
-            top: 495,
-            right: 40,
+            top: 499,
+            right: 61,
             child: Text(
               'Document & Wallet',
               maxLines: 2,
               textAlign: TextAlign.center,
               style:  GoogleFonts.poppins(textStyle:TextStyle(
-                  fontSize: 28,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.red),
             ),),
@@ -125,7 +125,7 @@ class SignUpWidget extends StatelessWidget {
 
           Positioned(
             bottom: 100,
-            left: 9,
+            left: 38,
             child: OutlinedButton(
               onPressed: () {
                 final provider = Provider.of<GoogleSignInProvider>(
@@ -151,14 +151,14 @@ class SignUpWidget extends StatelessWidget {
                   children:[
                   SvgPicture.asset(
                   'assets/google.svg',
-                    height: 35,
+                    height: 25,
                 ),
                     Padding(
                       padding: const EdgeInsets.only(left: 5),
                       child: Text(
                         'Continue with Google',
                         style: GoogleFonts.poppins(textStyle:TextStyle(
-                          fontSize: 22,
+                          fontSize: 18,
                           color: Colors.white,
                           fontFamily: 'Pretendard',
                           fontWeight: FontWeight.bold,
