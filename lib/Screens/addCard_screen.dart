@@ -1,7 +1,7 @@
 
 import 'dart:math';
 import 'package:d_locker/Screens/menuCard_screen.dart';
-import 'package:d_locker/Widgets/menuWidget.dart';
+import 'package:d_locker/Widgets/zDrawerMenuWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_card/awesome_card.dart';
 

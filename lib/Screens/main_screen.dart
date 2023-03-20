@@ -1,252 +1,173 @@
-import 'dart:ui';
-
-import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 
-class MainScreenCard extends StatefulWidget {
-  MainScreenCard({Key? key}) : super(key: key);
-  static const String idScreen = "main screen card screen";
-
-  @override
-  State<MainScreenCard> createState() => _MainScreenCardState();
-}
-
-class _MainScreenCardState extends State<MainScreenCard> {
-  final currentUser = FirebaseAuth.instance.currentUser;
+class MainScreen extends StatelessWidget {
+  MainScreen({Key? key}) : super(key: key);
+  static const String idScreen = "SignUp screen";
 
   @override
-  Widget build(BuildContext context) {
-    int index = 0;
-    final items = <Widget>[
-      Icon(
-        Icons.home,
-        size: 30,
+  Widget build(BuildContext context)
+  {
+    final pages = [
+      Container(
+        padding: EdgeInsets.all(30.0),
+        color: Colors.blueAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage('assets/main1.png'),
+              height: 350,
+            ),
+
+            Column(
+              children: [
+                Text(
+                  'Keep Your Data Safe & Secure',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Never worry about losing important documents again with our data vault feature',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.white70),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40.0,
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, ZDrawer.idScreen);
+              },
+              style: ElevatedButton.styleFrom(
+                  side: BorderSide(color: Colors.lightGreenAccent),
+                  padding: EdgeInsets.all(20),
+                  onPrimary: Colors.white),
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(color: Colors.greenAccent),
+                child: Text("Get started",style: TextStyle(color: Colors.black),),
+              ),
+            ),
+          ],
+        ),
       ),
-      Icon(
-        Icons.person,
-        size: 30,
+      Container(
+        padding: EdgeInsets.all(30.0),
+        color: Colors.greenAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage('assets/mainscreen2.png'),
+              height: 350,
+            ),
+
+
+            Column(
+              children: [
+                Text(
+                  'Pass on Your Legacy with Ease',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Transfer your digital legacy to your loved ones seamlessly with our data legacy transfer feature.',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white70),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40.0,
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  side: BorderSide(color: Colors.deepOrangeAccent),
+                  padding: EdgeInsets.all(20),
+                  onPrimary: Colors.white),
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(color: Colors.orangeAccent),
+                child: Text("Get started"),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        padding: EdgeInsets.all(30.0),
+        color: Colors.orangeAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: AssetImage('assets/main3.png'),
+              height: 350,
+            ),
+
+            Column(
+              children: [
+                Text(
+                  'Convenient and Secure Payments',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Make payments on-the-go with our digital wallet feature, without compromising on security.',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white70),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40.0,
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  side: BorderSide(color: Colors.lightBlueAccent),
+                  padding: EdgeInsets.all(20),
+                  onPrimary: Colors.white),
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(color: Colors.blueAccent),
+                child: Text("Get started"),
+              ),
+            ),
+          ],
+        ),
       ),
     ];
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
-      body: Stack(
-        children: [
-          Positioned(
-            top: 250,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            child: Image.asset(
-              'assets/bg_img2.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Container(
-              height: 280,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/bg-image-top.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(25)),
-              child: Stack(
-                children: [
-                  const Positioned(
-                    top: 70.0,
-                    right: 150.0,
-                    child: Text(
-                      'D-LOCKER',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 45,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        SizedBox(
-                          height: 1,
-                        ),
-                        Text(
-                          'Keep Your Data Safe and Secure',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'Never worry about losing important',
-                          maxLines: 4,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          'documents again with our data vault feature',
-                          maxLines: 4,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      height: 150,
-                      width: 110,
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: NetworkImage(currentUser!.photoURL!),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 40,
-            left: 10,
-            child: Container(
-              height: 360,
-              width: 360,
-              child: Card(
-                color: Color.fromARGB(0, 255, 255, 255),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                child: Container(
-                  child: Image.asset(
-                    'assets/image_.png',
-                  ),
-                  height: 322,
-                  width: 325,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(22),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color.fromARGB(255, 97, 24, 255),
-                        Color.fromARGB(0, 255, 255, 255),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            height: 110,
-            width: 110,
-            bottom: 320,
-            left: 30,
-            child: Material(
-              color: Color.fromRGBO(0, 0, 0, 0),
-              borderRadius: BorderRadius.circular(15),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Color.fromARGB(255, 0, 0, 0),
-                child: Icon(
-                  Icons.file_copy_sharp,
-                  color: Colors.white,
-                  size: 50,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            height: 50,
-            bottom: 50,
-            left: 30,
-            child: Material(
-              elevation: 10,
-              color: Colors.transparent,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(255, 98, 24, 255)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                ),
-                child: Text(
-                  "   Let's Go    ",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, ZDrawer.idScreen);
-                },
-              ),
-            ),
-          ),
-          Positioned(
-            height: 50,
-            bottom: 46,
-            right: 15,
-            child: Material(
-              elevation: 15,
-              color: Colors.transparent,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(255, 98, 24, 255)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                ),
-                child: Text(
-                  "    Next ->    ",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold),
-                ),
-                onPressed: () {},
-              ),
-            ),
-          )
-        ],
-      ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context)
-            .copyWith(iconTheme: IconThemeData(color: Colors.white)),
-        child: CurvedNavigationBar(
-            animationCurve: Curves.easeInOut,
-            animationDuration: Duration(milliseconds: 300),
-            color: Colors.deepPurpleAccent,
-            backgroundColor: Colors.transparent,
-            height: 60,
-            items: items,
-            index: index,
-            onTap: (i) => setState(() => index = i)),
+      body: LiquidSwipe(
+        pages: pages,
+        enableLoop: true,
+        enableSideReveal: true,
+        fullTransitionValue: 300,
+        slideIconWidget: Icon(
+          Icons.arrow_back_ios,
+          size: 20,
+        ),
+        positionSlideIcon: 0.5,
+        waveType: WaveType.circularReveal,
       ),
     );
   }
+
+
 }
