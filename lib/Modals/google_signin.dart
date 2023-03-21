@@ -1,4 +1,5 @@
 
+import 'package:d_locker/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -16,6 +17,8 @@ class GoogleSignInProvider extends ChangeNotifier {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
+
+
     showDialog(
       context: context,
       builder: (context) {
@@ -31,7 +34,17 @@ class GoogleSignInProvider extends ChangeNotifier {
       },
     );
 
-    await FirebaseAuth.instance.signInWithCredential(credential);
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+    User? user = userCredential.user!;
+    userCollection.doc(user.uid).set(
+      {
+        "username":user.displayName,
+        "profilepic":user.photoURL,
+        "email":user.email,
+        "uid":user.uid,
+        "userCreated":DateTime.now()
+      }
+    );
 
     notifyListeners();
     Navigator.of(context).pop();
