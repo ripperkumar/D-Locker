@@ -1,6 +1,7 @@
 import 'package:d_locker/Screens/addCard_screen.dart';
 import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
+import 'package:d_locker/Screens/nav_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
 
 import 'Screens/Signup_page.dart';
@@ -32,12 +33,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: SignUp_page.idScreen,
+        initialRoute: NavScreen.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),
           MenuCard.idScreen: (context) => MenuCard(),
           ZDrawer.idScreen: (context) => ZDrawer(),
+          NavScreen.idScreen: (context) => NavScreen(),
 
         },
         debugShowCheckedModeBanner: false,
