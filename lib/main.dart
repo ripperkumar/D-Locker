@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: NavScreen.idScreen,
+        initialRoute: SignUp_page.idScreen,
         routes: {
           SignUp_page.idScreen: (context) => SignUp_page(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),

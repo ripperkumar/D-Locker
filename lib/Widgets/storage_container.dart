@@ -11,8 +11,8 @@ class StorageContainer extends StatelessWidget {
           color: Colors.grey.shade100,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.001),
-              offset: Offset(-10, 10),
+              color: Colors.black.withOpacity(0.5),
+              offset: Offset(5, 5),
               blurRadius: 10,
             ),
             BoxShadow(
@@ -22,7 +22,7 @@ class StorageContainer extends StatelessWidget {
             ),
           ]),
       child: Padding(
-        padding: EdgeInsets.only(top: 25.0, bottom: 35),
+        padding: EdgeInsets.only(top: 35.0, bottom: 35),
         child: Column(
           children: [
             Container(

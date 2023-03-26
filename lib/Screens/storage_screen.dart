@@ -9,11 +9,12 @@ class StorageScreen extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          SizedBox(height: 40,),
+          SizedBox(height:
+            60,),
           StorageContainer(),
           Spacer(),
           Padding(
-            padding:  EdgeInsets.only(bottom: 18.0),
+            padding:  EdgeInsets.only(bottom: 22.0),
             child: UploadOptions(),
           ),
         ],

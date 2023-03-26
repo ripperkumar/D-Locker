@@ -3,6 +3,7 @@ import 'package:d_locker/Screens/Signup_page.dart';
 import 'package:d_locker/Screens/addCard_screen.dart';
 import 'package:d_locker/Screens/drawerMenuPage.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
+import 'package:d_locker/Screens/nav_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -48,6 +49,9 @@ class _ZDrawerState extends State<ZDrawer> {
       {
    return MenuCard();
       }
+    if(currentItem == MenuItem.dataVault){
+      return NavScreen();
+    }
     else{
       return AddCardDetails();
     }

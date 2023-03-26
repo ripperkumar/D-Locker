@@ -1,6 +1,9 @@
+import 'package:d_locker/navigation_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Header extends StatelessWidget {
+  NavigationController navController = Get.put(NavigationController());
   Widget tabCell(String text, bool selected, BuildContext context) {
     return selected
         ? Padding(
@@ -52,13 +55,10 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       alignment: Alignment.center,
       child: Column(
         children: [
-          Text(
-            "D-vault",
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          ),
           SizedBox(
             height: 20,
           ),
@@ -68,18 +68,25 @@ class Header extends StatelessWidget {
             height: 60,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.grey.shade300, boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.03),
-                offset: Offset(-10, 10),
-                blurRadius: 10,
+                color: Colors.grey.shade300,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    offset: Offset(5, 5),
+                    blurRadius: 10,
+                  ),
+                ]),
+            child: Obx(
+              ()=> Row(
+                children: [
+                  InkWell(
+                      onTap: ()=>navController.changeTab("Storage"),
+                      child: tabCell("Storage", navController.tab.value=="Storage", context),),
+                  InkWell(
+                      onTap: ()=>navController.changeTab("Files"),
+                      child: tabCell("Files", navController.tab.value=="Files", context))
+                ],
               ),
-            ]),
-            child: Row(
-              children: [
-                tabCell("Storage", true, context),
-                tabCell("Files", false, context)
-              ],
             ),
           ),
         ],

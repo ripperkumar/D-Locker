@@ -52,13 +52,13 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(30.0),
+              padding: EdgeInsets.only(left: 40.0,right: 40,top: 40,bottom: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    image: AssetImage('assets/main1.png'),
-                    height: 350,
+                    image: AssetImage('assets/new-folder-dynamic-premium.png'),
+                    height: 325,
                   ),
                   Column(
                     children: [
@@ -71,7 +71,7 @@ class MainScreen extends StatelessWidget {
                             color: Colors.white),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       Text(
                         'Never worry about losing important documents again with our data vault feature',
@@ -163,13 +163,13 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(30.0),
+              padding:EdgeInsets.only(left: 40.0,right: 40,top: 55,bottom: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    image: AssetImage('assets/mainscreen2.png'),
-                    height: 350,
+                    image: AssetImage('assets/wallet-dynamic-premium.png'),
+                    height: 325,
                   ),
                   Column(
                     children: [
@@ -279,7 +279,7 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image(
-                    image: AssetImage('assets/main3.png'),
+                    image: AssetImage('assets/target-dynamic-premium.png'),
                     height: 350,
                   ),
                   Column(
