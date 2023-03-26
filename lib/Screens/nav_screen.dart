@@ -2,7 +2,7 @@ import "package:d_locker/Screens/file_screen.dart";
 import "package:d_locker/Screens/storage_screen.dart";
 import "package:d_locker/Widgets/header.dart";
 import "package:d_locker/Widgets/zDrawerMenuWidget.dart";
-import "package:d_locker/navigation_controller.dart";
+import 'package:d_locker/Controllers/navigation_controller.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';

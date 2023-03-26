@@ -1,9 +1,18 @@
+
+
+import 'package:d_locker/Controllers/file_screen_controller.dart';
 import 'package:d_locker/Widgets/folder_section.dart';
 import 'package:d_locker/Widgets/recent_files.dart';
+import 'package:d_locker/firbase.dart';
+import 'package:d_locker/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 
 class FilesScreen extends StatelessWidget {
+  TextEditingController folderController = TextEditingController();
+  FilesScreenController filesScreenController = Get.put(FilesScreenController());
   openAddFolderDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -18,6 +27,7 @@ class FilesScreen extends StatelessWidget {
                   fontWeight: FontWeight.w600),
             ),
             content: TextFormField(
+              controller: folderController,
               autofocus: true,
               style: TextStyle(
                   fontSize: 17,
@@ -60,19 +70,34 @@ class FilesScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 18.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.deepOrangeAccent,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(18.0),
-                        child: Text(
-                          "Create",
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
+                    child: InkWell(
+                      onTap: () {
+                        userCollection
+                            .doc(FirebaseAuth.instance.currentUser!.uid)
+                            .collection('folders')
+                            .add({
+                          "name": folderController.text,
+                          "time": DateTime.now()
+                        });
+                        var count = 0;
+                        Navigator.popUntil(context, (route) {
+                          return count++ == 2;
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.deepOrangeAccent,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Text(
+                            "Create",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
@@ -146,24 +171,27 @@ class FilesScreen extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 18.0),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Upload",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black,
-                                            fontSize: 25),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Icon(
-                                        FontAwesomeIcons.upload,
-                                        color: Colors.grey,
-                                        size: 32,
-                                      ),
-                                    ],
+                                  child: InkWell(
+                                    onTap: ()=>FirebaseService().uploadFile(""),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Upload",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.black,
+                                              fontSize: 25),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Icon(
+                                          FontAwesomeIcons.upload,
+                                          color: Colors.grey,
+                                          size: 32,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],

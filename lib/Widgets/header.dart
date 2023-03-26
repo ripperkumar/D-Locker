@@ -1,4 +1,4 @@
-import 'package:d_locker/navigation_controller.dart';
+import 'package:d_locker/Controllers/navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
