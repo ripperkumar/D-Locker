@@ -172,7 +172,7 @@ class FilesScreen extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(right: 18.0),
                                   child: InkWell(
-                                    onTap: ()=>FirebaseService().uploadFile(""),
+                                    onTap: ()=>FirebaseService().uploadFile("",context),
                                     child: Row(
                                       children: [
                                         Text(

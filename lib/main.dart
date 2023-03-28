@@ -1,9 +1,10 @@
 import 'package:d_locker/Screens/addCard_screen.dart';
+import 'package:d_locker/Screens/display_file_screen.dart';
 import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/nav_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
-
+import 'package:get/get.dart';
 import 'Screens/Signup_page.dart';
 import 'Modals/google_signin.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           create: (context) => GoogleSignInProvider(),
         ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'D-Locker',
         theme: ThemeData(
           primarySwatch: Colors.blue,

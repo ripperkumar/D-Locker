@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.orange,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.05),
