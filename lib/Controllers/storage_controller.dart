@@ -17,7 +17,7 @@ class StorageController extends GetxController {
         userCollection.doc(uid).collection("files").snapshots().map((query) {
       int size = 0;
       query.docs.forEach((element) {
-        size + extractSize(element);
+        size += extractSize(element);
       });
       return size;
     }));

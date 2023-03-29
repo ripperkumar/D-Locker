@@ -11,10 +11,10 @@ class StorageContainer extends StatelessWidget {
     else if(size<1000000)
       {
         int sizeMB = (size*0.001).round();
-        return "$sizeMB KB";
+        return "$sizeMB MB";
       }
     else{
-      int sizeGB = (size*0.00001).round();
+      int sizeGB = (size*0.000001).round();
       return "$sizeGB GB";
     }
   }
@@ -60,7 +60,7 @@ class StorageContainer extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          ((controller.size.value/10000000)*100).round().toString(),
+                          ((controller.size.value/1000000)*100).round().toString(),
                           style: TextStyle(
                               fontSize: 50,
                               color: Color(0xff635c9b),
