@@ -1,4 +1,7 @@
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:d_locker/Modals/file_modal.dart';
 import 'package:d_locker/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mime/mime.dart';
@@ -83,6 +86,48 @@ class FirebaseService {
       }
     } else {
       print("Cancelled");
+    }
+  }
+
+  deleteFile(FileModel file) async {
+    await userCollection
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .collection('files')
+        .doc(file.id)
+        .delete();
+  }
+
+  downloadFile(FileModel file) async {
+    Future<String?> downloadpath() async {
+      Directory? directory;
+      try {
+        if (Platform.isIOS) {
+          directory = await getApplicationDocumentsDirectory();
+        } else {
+          directory = Directory('/storage/emulated/0/Download');
+          if (!await directory.exists()) {
+            directory = await getExternalStorageDirectory();
+          }
+        }
+      } catch (err, stack) {
+        print('cannot get the download path');
+      }
+      print(directory?.path);
+      return directory?.path;
+    }
+
+    try {
+      final downloadPath = await downloadpath();
+      final path = "$downloadPath/${file.name.replaceAll(" ", "")}";
+      var status = await Permission.storage.status;
+      print("${status}!!!");
+      if (!status.isGranted) {
+        await Permission.storage.request();
+      }
+      await Dio().download(file.url, path);
+    } catch (e) {
+      print('error!!!!!!!!');
+      print(e.toString());
     }
   }
 }

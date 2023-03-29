@@ -134,6 +134,13 @@ class DisplayFileScreen extends StatelessWidget {
                                               height: 2,
                                             ),
                                             ListTile(
+                                              onTap: (){
+                                                FirebaseService().downloadFile(
+                                                    filesController
+                                                        .files[index]
+                                                );
+                                                Get.back();
+                                              },
                                               leading: Icon(
                                                 Icons.file_download,
                                                 color: Colors.grey,
@@ -153,6 +160,13 @@ class DisplayFileScreen extends StatelessWidget {
                                               ),
                                             ),
                                             ListTile(
+                                              onTap: (){
+                                                FirebaseService().deleteFile(
+                                                    filesController
+                                                        .files[index]
+                                                );
+                                                Get.back();
+                                              },
                                               dense: true,
                                               contentPadding: EdgeInsets.only(
                                                   bottom: 12, left: 16, top: 8),
