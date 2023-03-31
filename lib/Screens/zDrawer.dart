@@ -1,6 +1,7 @@
 import 'package:d_locker/Modals/drawer_item_modal.dart';
 import 'package:d_locker/Screens/Signup_page.dart';
 import 'package:d_locker/Screens/addCard_screen.dart';
+import 'package:d_locker/Screens/digiWallet.dart';
 import 'package:d_locker/Screens/drawerMenuPage.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/nav_screen.dart';
@@ -47,7 +48,7 @@ class _ZDrawerState extends State<ZDrawer> {
   getScreen() {
     if(currentItem==MenuItem.payment)
       {
-   return MenuCard();
+   return NavScreen();
       }
     if(currentItem == MenuItem.dataVault){
       return NavScreen();

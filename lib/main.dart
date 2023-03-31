@@ -3,7 +3,8 @@ import 'package:d_locker/Screens/display_file_screen.dart';
 import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/nav_screen.dart';
-import 'package:d_locker/Screens/test.dart';
+import 'package:d_locker/Screens/digiWallet.dart';
+import 'package:d_locker/Screens/payment_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
 import 'package:get/get.dart';
 import 'Screens/Signup_page.dart';
@@ -35,15 +36,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: Test.idScreen,
+        initialRoute: DigiWallet.idScreen,
         routes: {
-          Test.idScreen: (context) => Test(),
+          DigiWallet.idScreen: (context) => DigiWallet(),
           SignUp_page.idScreen: (context) => SignUp_page(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),
           MenuCard.idScreen: (context) => MenuCard(),
           ZDrawer.idScreen: (context) => ZDrawer(),
           NavScreen.idScreen: (context) => NavScreen(),
-
         },
         debugShowCheckedModeBanner: false,
       ),
