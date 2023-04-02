@@ -93,7 +93,6 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      DrawerMenuItem currentItem = MenuItem.dataVault;
 
                       Get.to(
                               () => ZDrawer(
@@ -106,8 +105,6 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        DrawerMenuItem currentItem = MenuItem.dataVault;
-
                         Get.to(
                                 () => ZDrawer(
                                 MenuItem.dataVault
@@ -214,8 +211,6 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      DrawerMenuItem currentItem = MenuItem.dwallet;
-
                       Get.to(
                               () => ZDrawer(
                               MenuItem.dwallet
@@ -227,8 +222,6 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        DrawerMenuItem currentItem = MenuItem.dwallet;
-
                         Get.to(
                                 () => ZDrawer(
                                      MenuItem.dwallet
@@ -335,7 +328,6 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      DrawerMenuItem currentItem = MenuItem.dataVault;
 
                       Get.to(
                               () => ZDrawer(
@@ -348,7 +340,6 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        DrawerMenuItem currentItem = MenuItem.dataVault;
 
                         Get.to(
                                 () => ZDrawer(

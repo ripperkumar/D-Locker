@@ -21,7 +21,6 @@ class _ZDrawerState extends State<ZDrawer> {
 
   @override
   Widget build(BuildContext context) {
-
     DrawerMenuItem currentItem = widget.cItem ;
     return ZoomDrawer(
       style: DrawerStyle.Style1,
@@ -30,14 +29,14 @@ class _ZDrawerState extends State<ZDrawer> {
       slideWidth: MediaQuery.of(context).size.width*0.6,
       showShadow: true,
       backgroundColor: Colors.white60,
-      mainScreen: getScreen(),
+      mainScreen: getScreen(widget.cItem),
       menuScreen: Builder(
         builder: (context) {
           return MenuPage(
-            currentItem:currentItem,
+            currentItem:widget.cItem,
             onSelectedItem:(item){
             setState(() {
-              currentItem = item;
+              widget.cItem = item;
             });
             ZoomDrawer.of(context)!.close();
             }
@@ -48,12 +47,12 @@ class _ZDrawerState extends State<ZDrawer> {
 
   }
 
-  getScreen() {
-    if(widget.cItem==MenuItem.dwallet)
+  getScreen(currentItem) {
+    if(currentItem==MenuItem.dwallet)
       {
    return DigiWallet();
       }
-    if(widget.cItem == MenuItem.dataVault){
+    if(currentItem == MenuItem.dataVault){
       return NavScreen();
     }
     else{
