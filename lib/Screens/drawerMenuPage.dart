@@ -10,20 +10,21 @@ class MenuItem {
   static final dwallet = DrawerMenuItem(title: 'D-Wallet', icon: Icons.payment);
   static final dataVault =
       DrawerMenuItem(title: 'Data Vault', icon: Icons.file_present_sharp);
-  static final notification =
-      DrawerMenuItem(title: 'notification', icon: Icons.doorbell_outlined);
+  static final addCardDetails =
+      DrawerMenuItem(title: 'Add Card Details', icon: Icons.doorbell_outlined);
   static final help = DrawerMenuItem(title: 'help', icon: Icons.help);
   static final aboutUs =
       DrawerMenuItem(title: 'aboutUs', icon: Icons.question_mark_rounded);
-  static final addCardDetail =
-      DrawerMenuItem(title: 'Add Card Detail', icon: Icons.rate_review);
+  static final viewCards =
+      DrawerMenuItem(title: 'View Cards', icon: Icons.rate_review);
   static final logout =
       DrawerMenuItem(title: 'Log Out', icon: FontAwesomeIcons.signOut);
   static final all = <DrawerMenuItem>[
     dataVault,
-    addCardDetail,
+    viewCards,
+    addCardDetails,
     dwallet,
-    notification,
+
     help,
     aboutUs,
 

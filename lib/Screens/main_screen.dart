@@ -57,7 +57,8 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 40.0,right: 40,top: 40,bottom: 30),
+              padding:
+                  EdgeInsets.only(left: 40.0, right: 40, top: 40, bottom: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -93,11 +94,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-
-                      Get.to(
-                              () => ZDrawer(
-                              MenuItem.dataVault
-                          ));
+                      Get.to(() => ZDrawer(MenuItem.dataVault));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.lightGreenAccent),
@@ -105,10 +102,7 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        Get.to(
-                                () => ZDrawer(
-                                MenuItem.dataVault
-                            ));
+                        Get.to(() => ZDrawer(MenuItem.dataVault));
                       },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.lightGreenAccent),
@@ -175,7 +169,8 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding:EdgeInsets.only(left: 40.0,right: 40,top: 55,bottom: 30),
+              padding:
+                  EdgeInsets.only(left: 40.0, right: 40, top: 55, bottom: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -211,10 +206,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      Get.to(
-                              () => ZDrawer(
-                              MenuItem.dwallet
-                          ));
+                      Get.to(() => ZDrawer(MenuItem.dwallet));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.deepOrangeAccent),
@@ -222,11 +214,8 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        Get.to(
-                                () => ZDrawer(
-                                     MenuItem.dwallet
-                                ));
-                        },
+                        Get.to(() => ZDrawer(MenuItem.dwallet));
+                      },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.deepOrangeAccent),
                           padding: EdgeInsets.all(15),
@@ -328,11 +317,7 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-
-                      Get.to(
-                              () => ZDrawer(
-                              MenuItem.dataVault
-                          ));
+                      Get.to(() => ZDrawer(MenuItem.dataVault));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.lightBlueAccent),
@@ -340,11 +325,7 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-
-                        Get.to(
-                                () => ZDrawer(
-                                MenuItem.dataVault
-                            ));
+                        Get.to(() => ZDrawer(MenuItem.dataVault));
                       },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.lightBlueAccent),

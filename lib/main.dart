@@ -6,6 +6,7 @@ import 'package:d_locker/Screens/nav_screen.dart';
 import 'package:d_locker/Screens/digiWallet.dart';
 import 'package:d_locker/Screens/payment_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
+import 'package:d_locker/cardpart/cardmainscreen.dart';
 import 'package:get/get.dart';
 import 'Screens/Signup_page.dart';
 import 'Modals/google_signin.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           AddCardDetails.idScreen: (context) => AddCardDetails(),
           MenuCard.idScreen: (context) => MenuCard(),
           NavScreen.idScreen: (context) => NavScreen(),
+          CardSave.idScreen:(context)=>CardSave(),
         },
         debugShowCheckedModeBanner: false,
       ),

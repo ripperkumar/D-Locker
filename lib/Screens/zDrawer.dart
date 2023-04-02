@@ -5,6 +5,8 @@ import 'package:d_locker/Screens/digiWallet.dart';
 import 'package:d_locker/Screens/drawerMenuPage.dart';
 import 'package:d_locker/Screens/menuCard_screen.dart';
 import 'package:d_locker/Screens/nav_screen.dart';
+import 'package:d_locker/cardpart/AddPaymentCardScreen.dart';
+import 'package:d_locker/cardpart/cardmainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -55,8 +57,11 @@ class _ZDrawerState extends State<ZDrawer> {
     if(currentItem == MenuItem.dataVault){
       return NavScreen();
     }
+    if(currentItem == MenuItem.viewCards){
+      return CardSave();
+    }
     else{
-      return AddCardDetails();
+      return AddPaymentCardScreenState();
     }
   }
 
