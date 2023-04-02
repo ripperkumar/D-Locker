@@ -9,17 +9,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class ZDrawer extends StatefulWidget {
-  const ZDrawer({Key? key}) : super(key: key);
   static const String idScreen = "ZDrawer screen";
+  ZDrawer(this.cItem);
+  DrawerMenuItem cItem ;
+
   @override
   State<ZDrawer> createState() => _ZDrawerState();
 }
 
 class _ZDrawerState extends State<ZDrawer> {
-  DrawerMenuItem currentItem = MenuItem.payment;
 
   @override
   Widget build(BuildContext context) {
+
+    DrawerMenuItem currentItem = widget.cItem ;
     return ZoomDrawer(
       style: DrawerStyle.Style1,
       borderRadius: 40,
@@ -46,11 +49,11 @@ class _ZDrawerState extends State<ZDrawer> {
   }
 
   getScreen() {
-    if(currentItem==MenuItem.payment)
+    if(widget.cItem==MenuItem.dwallet)
       {
-   return NavScreen();
+   return DigiWallet();
       }
-    if(currentItem == MenuItem.dataVault){
+    if(widget.cItem == MenuItem.dataVault){
       return NavScreen();
     }
     else{

@@ -36,13 +36,12 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: DigiWallet.idScreen,
+        initialRoute: SignUp_page.idScreen,
         routes: {
           DigiWallet.idScreen: (context) => DigiWallet(),
           SignUp_page.idScreen: (context) => SignUp_page(),
           AddCardDetails.idScreen: (context) => AddCardDetails(),
           MenuCard.idScreen: (context) => MenuCard(),
-          ZDrawer.idScreen: (context) => ZDrawer(),
           NavScreen.idScreen: (context) => NavScreen(),
         },
         debugShowCheckedModeBanner: false,

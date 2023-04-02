@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MenuItem {
-  static final payment = DrawerMenuItem(title: 'Payment', icon: Icons.payment);
+  static final dwallet = DrawerMenuItem(title: 'D-Wallet', icon: Icons.payment);
   static final dataVault =
       DrawerMenuItem(title: 'Data Vault', icon: Icons.file_present_sharp);
   static final notification =
@@ -20,12 +20,13 @@ class MenuItem {
   static final logout =
       DrawerMenuItem(title: 'Log Out', icon: FontAwesomeIcons.signOut);
   static final all = <DrawerMenuItem>[
-    payment,
     dataVault,
+    addCardDetail,
+    dwallet,
     notification,
     help,
     aboutUs,
-    addCardDetail
+
   ];
 }
 

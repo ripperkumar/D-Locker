@@ -14,23 +14,7 @@ class NavScreen extends StatefulWidget {
   State<NavScreen> createState() => _NavScreenState();
 }
 
-class _NavScreenState extends State<NavScreen> {int index = 1;
-  final items = <Widget>[
-    Icon(
-      Icons.home,
-      size: 30,
-    ),
-
-    Icon(
-      Icons.add,
-      size: 30,
-    ),
-
-    Icon(
-      Icons.person,
-      size: 30,
-    ),
-  ];
+class _NavScreenState extends State<NavScreen> {
 
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,18 @@
+import 'package:d_locker/Modals/drawer_item_modal.dart';
+import 'package:d_locker/Screens/digiWallet.dart';
+import 'package:d_locker/Screens/drawerMenuPage.dart';
+import 'package:d_locker/Screens/nav_screen.dart';
 import 'package:d_locker/Screens/zDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
-  static const String idScreen = "SignUp screen";
+  static const String idScreen = "Main screen";
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +93,12 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, ZDrawer.idScreen);
+                      DrawerMenuItem currentItem = MenuItem.dataVault;
+
+                      Get.to(
+                              () => ZDrawer(
+                              MenuItem.dataVault
+                          ));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.lightGreenAccent),
@@ -96,7 +106,12 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, ZDrawer.idScreen);
+                        DrawerMenuItem currentItem = MenuItem.dataVault;
+
+                        Get.to(
+                                () => ZDrawer(
+                                MenuItem.dataVault
+                            ));
                       },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.lightGreenAccent),
@@ -199,7 +214,12 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, ZDrawer.idScreen);
+                      DrawerMenuItem currentItem = MenuItem.dwallet;
+
+                      Get.to(
+                              () => ZDrawer(
+                              MenuItem.dwallet
+                          ));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.deepOrangeAccent),
@@ -207,8 +227,13 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, ZDrawer.idScreen);
-                      },
+                        DrawerMenuItem currentItem = MenuItem.dwallet;
+
+                        Get.to(
+                                () => ZDrawer(
+                                     MenuItem.dwallet
+                                ));
+                        },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.deepOrangeAccent),
                           padding: EdgeInsets.all(15),
@@ -310,7 +335,12 @@ class MainScreen extends StatelessWidget {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, ZDrawer.idScreen);
+                      DrawerMenuItem currentItem = MenuItem.dataVault;
+
+                      Get.to(
+                              () => ZDrawer(
+                              MenuItem.dataVault
+                          ));
                     },
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(color: Colors.lightBlueAccent),
@@ -318,7 +348,12 @@ class MainScreen extends StatelessWidget {
                         onPrimary: Colors.white),
                     child: OutlinedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, ZDrawer.idScreen);
+                        DrawerMenuItem currentItem = MenuItem.dataVault;
+
+                        Get.to(
+                                () => ZDrawer(
+                                MenuItem.dataVault
+                            ));
                       },
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(color: Colors.lightBlueAccent),

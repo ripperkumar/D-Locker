@@ -1,5 +1,6 @@
 import 'dart:ui';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import "package:d_locker/Widgets/zDrawerMenuWidget.dart";
 import 'package:d_locker/Screens/main_screen.dart';
 import 'package:d_locker/Screens/payment_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,18 @@ class _DigiWalletState extends State<DigiWallet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.black,
+        title: Row(
+          children: [
+            Spacer(),
+            FaIcon(FontAwesomeIcons.fileArrowDown,color: Colors.white,size: 30,),
+          ],
+        ),
+        leading: MenuWidget(isBlack:false),
+      ),
+
       body: Container(
         color: Color.fromARGB(255, 0, 4, 30), // Dark blue background
         padding: EdgeInsets.zero,
@@ -32,21 +45,7 @@ class _DigiWalletState extends State<DigiWallet> {
                 height: 400,
               ),
             ),
-            Positioned(
-              top: 22,
-              left: 2,
-              child: IconButton(
-                iconSize: 40,
-                color: Colors.white,
-                icon: Icon(Icons.arrow_back_ios_sharp),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MainScreen()),
-                  );
-                },
-              ),
-            ),
+
             Positioned(
               top: 200,
               left: -50,
