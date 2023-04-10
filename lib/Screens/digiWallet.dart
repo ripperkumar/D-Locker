@@ -36,7 +36,7 @@ class _DigiWalletState extends State<DigiWallet> {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(35),
                         bottomRight: Radius.circular(35))),
-                height: MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.35,
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -48,14 +48,14 @@ class _DigiWalletState extends State<DigiWallet> {
                         style: TextStyle(color:HexColor('2C3333'),fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 3,
                       ),
                       Text(
                         'Payment ',
                         style: TextStyle(color:HexColor('2C3333'),fontSize: 26, fontWeight: FontWeight.w400),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       Container(
                         width:MediaQuery.of(context).size.width*0.75 ,
@@ -84,7 +84,7 @@ class _DigiWalletState extends State<DigiWallet> {
               Container(
                 child: Image.asset(
                   'assets/paymentPage.jpg',
-                  height: MediaQuery.of(context).size.height * 0.575,
+                  height: MediaQuery.of(context).size.height * 0.525,
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.fitHeight,
                 ),
@@ -92,7 +92,7 @@ class _DigiWalletState extends State<DigiWallet> {
             ],
           ),
           Positioned(
-            top: 170,
+            top: 210,
             right: 25,
               child: Container(
                 height: 90,
