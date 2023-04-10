@@ -1,10 +1,13 @@
 import 'package:d_locker/Modals/drawer_item_modal.dart';
 import 'package:d_locker/Modals/google_signin.dart';
 import 'package:d_locker/Screens/Signup_page.dart';
+import 'package:d_locker/Screens/payment_screen.dart';
+import 'package:d_locker/Screens/profile_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class MenuItem {
   static final dwallet = DrawerMenuItem(title: 'D-Wallet', icon: Icons.payment);
@@ -51,31 +54,36 @@ class MenuPage extends StatelessWidget {
               Container(
                 height: 200,
                 width: 150,
-                child: DrawerHeader(
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundImage:
-                                NetworkImage(currentUser!.photoURL!),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            currentUser!.displayName!,
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.fade,
-                            style: TextStyle(
-                              fontFamily: "PretendardBold",
-                              fontSize: 20.0,
+                child: GestureDetector(
+                  onTap:() {
+                Get.to(ProfileScreen());
+                  },
+                  child: DrawerHeader(
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 35,
+                              backgroundImage:
+                                  NetworkImage(currentUser!.photoURL!),
                             ),
-                          )
-                        ],
-                      )),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              currentUser!.displayName!,
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.fade,
+                              style: TextStyle(
+                                fontFamily: "PretendardBold",
+                                fontSize: 20.0,
+                              ),
+                            )
+                          ],
+                        )),
+                  ),
                 ),
               ),
               ...MenuItem.all.map(buildMenuItem).toList(),
